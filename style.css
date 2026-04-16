@@ -23,7 +23,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 160px; /* offset for sticky navbar + banner */
+    scroll-padding-top: 100px; /* offset for sticky navbar */
 }
 
 * {
@@ -82,6 +82,8 @@ ul {
     padding: 6rem 0;
     position: relative;
     overflow: hidden;
+    z-index: 2;
+    background-color: var(--bg-dark);
 }
 
 .dark-bg {
@@ -219,7 +221,12 @@ ul {
     position: relative;
     padding: 0.5rem 0;
     letter-spacing: 1px;
-    color: #111; /* Always dark for light theme hero */
+    color: #FFFFFF; /* High contrast for hero */
+    transition: color 0.3s ease;
+}
+
+.navbar.scrolled .desktop-nav a {
+    color: #111111; /* Dark text for light sticky background */
 }
 /* Ensure dark text regardless of scroll on white background banner */
 .navbar a.logo-link { color: inherit; }
@@ -324,6 +331,7 @@ ul {
     justify-content: center;
     text-align: center;
     background-color: #000;
+    z-index: 1;
 }
 
 .hero-bg-overlay {
